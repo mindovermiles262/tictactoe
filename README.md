@@ -1,16 +1,17 @@
 #Project Title
-Description.... [link](http://link_to_project)
+Description.... [link](link_to_project)
 
 #Use
 
 #Development Languages
+* Ruby v2.3
 
 #TODO
-1. 
+1. Have random player start game
 2. 
 
 #Contributing
-1.
+1. 
 2.
 
 #Copyright Notice
