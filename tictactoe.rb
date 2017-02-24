@@ -1,100 +1,54 @@
 class TicTacToe
     def initialize
-        puts "A nice game of Tic-Tac-Toe (3-in-a-row!)\n"
+        @board = Board.new
         @player1 = Player.new
         @player2 = Player.new
-        @game_data = (0..8).to_a
-        start()
+        welcome(@player1, @player2)
     end
-
-    def start
-        # game introduction
-=begin - Remove for actual game
-        print 'Player "X" - What is your name? '
-        p1Name = gets.chomp.to_s
-        print 'Player "O" - What is your name? '
-        p2Name = gets.chomp.to_s
-        @player1 = [p1Name, "X"]
-        @player2 = [p2Name, "O"]
-=end
-
-        @player1 = ["Erik", "X"]
-        @player2 = ["Frank", "O"]
-        puts "Hi #{@player1[0]} and #{@player2[0]}! Let's play Tic-Tac-Toe!"
-        #TODO: random player start
-        @active_player = @player1
-        play(@active_player)
-    end
-
-    def play(active)
-        print @game_data
-        Board.draw_board(@game_data)
-        puts "#{active[0]}, Choose location to place #{active[1]}"
-        choice = gets.chomp.to_i
-        until (choice.is_a? Integer) && (choice.to_i >= 0) && (choice.to_i <= 8)
-            puts "Invalid Location. Try again"
-            choice = gets.chomp.to_i
-        end
-        Player.new.choose(@game_data, choice, @active_player)
-        # choose method (checks spot, places marker)
-        # switch players
-        Player.new.switch_player(@active_player, @player1, @player2)
+    def welcome(p1, p2)
+        puts "Welcome #{p1.name} and #{p2.name}"
+        Board.display(@board)
     end
 end
-    
 
 class Player
+    @@player_count = 0
+    attr_reader :name, :marker
     def initialize
-        @picked = []
-    end
-
-    def switch_player(active, p1, p2)
-        # switches active player
-        if active==p1
-            p1 = active
-            active = p2
+        puts "Player 1 what is your name?"
+        @name = gets.chomp
+        @@player_count += 1
+        if @@player_count == 1
+            @marker = "X"
         else
-            p2 = active
-            active = p1
+            @marker = "O"
         end
-        TicTacToe.play(active)
-    end
-
-    def choose(data, choice, plyr)
-        # function to choose marker location
-        # check if spot has been taken already
-        # change gameData array if free
-        if data[choice] == choice
-            data[choice] = plyr[1]
-            puts data.inspect
-        else #spot already picked
-
-        end
-        @game_data = data
-        @game_data
     end
 end
 
-
 class Board
+    attr_reader :board, :print, :display
     def initialize
-        # do something
+        @board = (0..8).to_a
     end
 
-    def self.draw_board(arr)
-        # draws board in terminal
-        top_row = arr[0..2]
-        middle_row = arr[3..5]
-        bottom_row = arr[6..8]
+    def board
+        @board
+    end
+
+    def display(board)
+        puts "Board.display"
+        top_row = board[0..2]
+        #middle_row = board[3..5]
+        #bottom_row = board[6..8]
         print("\n" + top_row.join(" | ") + "\n")
         9.times { print "-"}
-        puts("\n" + middle_row.join(" | ") + "\n")
-        9.times { print "-"}
-        print("\n" + bottom_row.join(" | ") + "\n\n")
+        #puts("\n" + middle_row.join(" | ") + "\n")
+        #9.times { print "-"}
+        #print("\n" + bottom_row.join(" | ") + "\n\n")
     end
-
-    def checkWin
-        # do something
+    def test
+        puts "TESTING 1-2-3"
     end
 end
 
