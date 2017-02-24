@@ -8,7 +8,11 @@ Description.... [link](link_to_project)
 
 #TODO
 1. Have random player start game
-2. 
+2. Figure out why Board.display `print` returns error
+    '''
+    tictactoe.rb:56:in `block in display': wrong number of arguments (1 for 0) (ArgumentError)
+    '''
+3. Test `else` statement of Board.check
 
 #Contributing
 1. 
