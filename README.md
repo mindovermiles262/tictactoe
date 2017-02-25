@@ -11,7 +11,7 @@ Download `tictactoe.rb` and open in terminal by typing `ruby tictactoe.rb`
 
 #TODO
 1. Have random player start game
-2. Add play again?
+2. ~~Add play again?~~
 
 #Contributing
 Please follow a "fork-and-pull" workflow when Contributing

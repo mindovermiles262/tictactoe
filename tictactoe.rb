@@ -22,11 +22,8 @@ class TicTacToe
     def choose (player)
         # check for draw
         if @@plays >= 9 
-            2.times { print "\n" }
-            puts "        DRAW!"
-            2.times { print "\n" }
-            #TODO: play again?
-            exit
+            puts "\n\n        DRAW!\n\n"
+            play_again
         end
         print "> "
         choice = gets.chomp.to_i - 1
@@ -43,11 +40,8 @@ class TicTacToe
         end
         # check for win
         if (@board.win(player)) == true 
-                2.times { print "\n" }
-                puts "     CONGRATULATIONS #{player.name.upcase}! YOU WIN!"
-                2.times { print "\n" }
-                #TODO: play again?
-                exit
+            puts "\n\n     CONGRATULATIONS #{player.name.upcase}! YOU WIN!\n\n"
+            play_again
         else
             switch(player)
         end
@@ -66,6 +60,19 @@ class TicTacToe
         puts "#{@active_player.name}, Choose location to place #{@active_player.marker}"
         choose(@active_player)
     end
+
+    def play_again
+        puts "Play again? (Y/N)"
+        response = gets.chomp.downcase
+        if response == "y" || response == "yes"
+            @@plays = 0
+            TicTacToe.new
+        else
+            puts "Exiting..."
+            exit
+        end
+    end
+
 end
 
 class Player
@@ -73,11 +80,11 @@ class Player
     @@player_count = 0
 
     def initialize
-        puts "Player #{@@player_count + 1} what is your name?"
+        puts "Player #{(@@player_count % 2) + 1} what is your name?"
         @name = gets.chomp.capitalize
         @picked = []
         @@player_count += 1
-        @@player_count == 1 ? @marker="X" : @marker="O"
+        (@@player_count % 2) == 1 ? @marker="X" : @marker="O"
     end
 end
 
