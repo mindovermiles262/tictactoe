@@ -1,22 +1,26 @@
-#Project Title
-Description.... [link](link_to_project)
+#Tic-Tac-Toe
+A terminal-based game of Tic Tac Toe (3 in a row).
+
+Written for [The Odin Project's](http://www.theodinproject.com) Ruby course. More information [here](http://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
 #Use
+Download `tictactoe.rb` and open in terminal by typing `ruby tictactoe.rb`
 
 #Development Languages
 * Ruby v2.3
 
 #TODO
 1. Have random player start game
-2. Figure out why Board.display `print` returns error
-    '''
-    tictactoe.rb:56:in `block in display': wrong number of arguments (1 for 0) (ArgumentError)
-    '''
-3. Test `else` statement of Board.check
+2. Add play again?
 
 #Contributing
-1. 
-2.
+Please follow a "fork-and-pull" workflow when Contributing
+
+1. Fork the repo on GitHub
+2. Clone the project to your own machine
+3. Commit changes to your own branch
+4. Push your work back up to your fork
+5. Submit a Pull request so that we can review your changes
 
 #Copyright Notice
 Copyright 2017 Andy Duss
