@@ -6,15 +6,16 @@ class TicTacToe
         @board = Board.new
         @player1 = Player.new
         @player2 = Player.new
-        #TODO: Add Random Player Start
-        @active_player = @player1
+        rand(1..2) == 1 ? @active_player = @player1 : @active_player = @player2
         welcome(@player1, @player2, @active_player)
     end
 
-    def welcome(p1, p2, player) # Welcome players to game
+    # Welcome players to game
+    def welcome(p1, p2, player) 
         puts "Welcome #{p1.name} and #{p2.name}!"
         @board.display
-        puts "#{player.name}, Choose location to place #{player.marker}"
+        puts "#{player.name}, You go first!"
+        puts "Choose location to place #{player.marker}"
         choose(@active_player)
     end
 
