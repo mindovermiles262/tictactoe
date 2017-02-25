@@ -10,7 +10,7 @@ Download `tictactoe.rb` and open in terminal by typing `ruby tictactoe.rb`
 * Ruby v2.3
 
 #TODO
-1. Have random player start game
+1. ~~Have random player start game~~
 2. ~~Add play again?~~
 
 #Contributing
