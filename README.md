@@ -6,6 +6,8 @@ Written for [The Odin Project's](http://www.theodinproject.com) Ruby course. Mor
 #Use
 Download `tictactoe.rb` and open in terminal by typing `ruby tictactoe.rb`
 
+Alternativly, an online version can be found [here](https://repl.it/GBDI/0)
+
 #Development Languages
 * Ruby v2.3
 
