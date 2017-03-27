@@ -6,6 +6,8 @@ Written for [The Odin Project's](http://www.theodinproject.com) Ruby course. Mor
 ## Use
 Download `tictactoe.rb` and open in terminal by typing `ruby tictactoe.rb`
 
+Alternativly, an online version can be found [here](https://repl.it/GBDI/0)
+
 ## Testing (RSpec)
 * Start by writing tests to make sure players win when they should, e.g. when the board reads X X X across the top row, your `#game-over` method (or its equivalent) should trigger.
 
