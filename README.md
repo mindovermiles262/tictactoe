@@ -1,19 +1,26 @@
-#Tic-Tac-Toe
+# Tic-Tac-Toe
 A terminal-based game of Tic Tac Toe (3 in a row).
 
 Written for [The Odin Project's](http://www.theodinproject.com) Ruby course. More information [here](http://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
-#Use
+## Use
 Download `tictactoe.rb` and open in terminal by typing `ruby tictactoe.rb`
 
-#Development Languages
+## Testing (RSpec)
+* Start by writing tests to make sure players win when they should, e.g. when the board reads X X X across the top row, your `#game-over` method (or its equivalent) should trigger.
+
+* Test each of your critical methods to make sure they function properly and handle edge cases.
+
+* Try using mocks/doubles to isolate methods and make sure that they're sending back the right outputs.
+
+## Development Languages
 * Ruby v2.3
 
-#TODO
+## TODO
 1. ~~Have random player start game~~
 2. ~~Add play again?~~
 
-#Contributing
+## Contributing
 Please follow a "fork-and-pull" workflow when Contributing
 
 1. Fork the repo on GitHub
@@ -22,7 +29,7 @@ Please follow a "fork-and-pull" workflow when Contributing
 4. Push your work back up to your fork
 5. Submit a Pull request so that we can review your changes
 
-#Copyright Notice
+## Copyright Notice
 Copyright 2017 Andy Duss
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

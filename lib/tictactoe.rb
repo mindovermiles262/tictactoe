@@ -128,4 +128,4 @@ class Board
     end
 end
 
-game = TicTacToe.new
+#game = TicTacToe.new
