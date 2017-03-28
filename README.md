@@ -4,9 +4,7 @@ A terminal-based game of Tic Tac Toe (3 in a row).
 Written for [The Odin Project's](http://www.theodinproject.com) Ruby course. More information [here](http://www.theodinproject.com/courses/ruby-programming/lessons/oop)
 
 ## Use
-Download `tictactoe.rb` and open in terminal by typing `ruby tictactoe.rb`
-
-Alternativly, an online version can be found [here](https://repl.it/GBDI/0)
+Download files and run `ruby main.rb` from directory root
 
 ## Testing (RSpec)
 * Start by writing tests to make sure players win when they should, e.g. when the board reads X X X across the top row, your `#game-over` method (or its equivalent) should trigger.

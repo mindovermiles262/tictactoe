@@ -1,7 +1,7 @@
 require 'board'
 
-
 describe 'board class' do
+
     let(:board) {Board.new}
 
     it "initializes as board class" do

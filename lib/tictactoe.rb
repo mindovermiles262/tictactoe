@@ -2,30 +2,27 @@ class TicTacToe
     require_relative './board'
     require_relative './player'
 
-    @@plays = 0
-
     def initialize
         @board = Board.new
         @player1 = Player.new("Player 1", "x")
         @player2 = Player.new("Player 2", "o")
+        @plays = 0
 
         # Random starting player
         rand(1..2) == 1 ? @active_player = @player1 : @active_player = @player2
-        
-        game_start(@player1, @player2, @active_player)
     end
 
     # Welcome players to game
-    def game_start(p1, p2, active) 
-        puts "Welcome #{p1.name} and #{p2.name}!"
+    def game_start
+        puts "Welcome #{@player1.name} and #{@player2.name}!"
         @board.display
-        puts "#{active.name}, You go first!"
+        puts "#{@active_player.name}, You go first!"
         
         choose(@active_player)
     end
 
     # @active_player chooses spot
-    def choose (player)
+    def choose(player)
         if not draw?
             puts "#{player.name} choose location to place #{player.marker}"
             print "> "
@@ -45,8 +42,7 @@ class TicTacToe
         puts "Play again? (Y/N)"
         response = gets.chomp.downcase
         if response == "y" || response == "yes"
-            @@plays = 0
-            TicTacToe.new
+            TicTacToe.new.game_start
         else
             puts "Exiting..."
             exit
@@ -54,14 +50,11 @@ class TicTacToe
     end
 
     def draw?
-        if @@plays >= 9 
-            true
-        end
-        false
+        @plays >= 9 ? true : false
     end
 
     def win?(player)
-        if (@board.win(player)) == true 
+        if (@board.win(player)) == true
             puts "\n\n     CONGRATULATIONS #{player.name.upcase}! YOU WIN!\n\n"
             play_again
         else
@@ -75,7 +68,7 @@ class TicTacToe
             choose(player)
         else
             player.picked << choice
-            @@plays += 1
+            @plays += 1
         end
         win?(player)
     end
