@@ -29,10 +29,10 @@ class Board
 
     # check if player has won game
     def win (player)
-        wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,9],[0,4,8],[2,4,6]]
+        wins = [[0,1,2],[3,4,5],[6,7,8],[0,3,6],[1,4,7],[2,5,8],[0,4,8],[2,4,6]]
         wins.each do |w|
-            temp = player.picked & w
-            temp.to_s.length == 9 ? (return true) : false
+            temp = player.picked & w # "&" compares and returns same values '[1,2,3] & [1,2,5,6] #=> [1, 2]''
+            temp.length == 3 ? (return true) : false
         end
     end
 end
