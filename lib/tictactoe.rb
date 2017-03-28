@@ -26,7 +26,7 @@ class TicTacToe
 
     # @active_player chooses spot
     def choose (player)
-        if draw? == false
+        if not draw?
             puts "#{player.name} choose location to place #{player.marker}"
             print "> "
             choice = gets.chomp.to_i - 1
@@ -56,9 +56,8 @@ class TicTacToe
     def draw?
         if @@plays >= 9 
             true
-        else
-            false
         end
+        false
     end
 
     def win?(player)
